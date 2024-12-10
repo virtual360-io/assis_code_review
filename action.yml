@@ -1,0 +1,18 @@
+name: "Code Review the PR"
+description: "Give a Greate for the PR"
+inputs:
+  github-token: # id of input
+    description: "GitHub Token"
+    required: true
+  api-url: # id of input
+    description: "Assis API URL"
+    required: true
+  api-token: # id of input
+    description: "Assis TOKEN API"
+    required: true
+outputs:
+  assis-answer: # id of output
+    description: "Assis Answer"
+runs:
+  using: "node20"
+  main: "index.js"
