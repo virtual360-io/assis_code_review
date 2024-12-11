@@ -56,7 +56,7 @@ async function run() {
     }
 
     const data = await response.json();
-    core.setOutput("assis-answer", data);
+    core.setOutput("assis-answer", data["answer"]);
   } catch (error) {
     core.setFailed(error.message);
   }
