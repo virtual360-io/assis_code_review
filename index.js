@@ -30,6 +30,8 @@ async function run() {
       })
       .join("diff --git "); // Rejoin with the diff header
 
+    console.log("Filtered diff:", filteredDiff);
+
     const question = core.getInput("assis-prompt") + "\n\n" + filteredDiff;
 
     // Send to API
