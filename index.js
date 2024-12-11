@@ -64,6 +64,13 @@ async function run() {
 
     const data = await response.json();
     core.setOutput("assis-answer", data["answer"]);
+
+    await octokit.rest.issues.createComment({
+      owner: context.repo.owner,
+      repo: context.repo.repo,
+      issue_number: context.payload.pull_request.number,
+      body: data["answer"],
+    });
   } catch (error) {
     core.setFailed(error.message);
   }
