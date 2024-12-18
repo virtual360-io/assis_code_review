@@ -20,13 +20,13 @@ async function run() {
       },
     });
 
-    // Filter for ruby/html/erb/css/js files
+    // Filter for ruby/html/erb/css/js/python files
     const filteredDiff = diff
       .split("diff --git ")
       .slice(1) // Skip the first empty element
       .filter((fileDiff) => {
         // Check if the file extension matches our criteria
-        return fileDiff.match(/\.(rb|html|erb|css|js)\s/);
+        return fileDiff.match(/\.(rb|html|erb|css|js|py)\s/);
       })
       .join("diff --git "); // Rejoin with the diff header
 
